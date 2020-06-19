@@ -1,0 +1,177 @@
+.footer {
+  background-color: #2f303a;
+  min-width: 1200px;
+
+  &__main {
+    padding: 48px 0 28px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}
+
+.faddress {
+  .logo {
+    margin: 0 0 20px;
+  }
+
+  &__post {
+    color: $whiteColor;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  &__item:last-child {
+    margin: 0;
+  }
+}
+.fsocial__title,
+.fsign__title {
+  color: $whiteColor;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  margin: 0 0 20px;
+  display: block;
+}
+.fsocial__list {
+  display: flex;
+}
+.fsocial__item:not(:last-child) {
+  margin-right: 10px;
+}
+.fsocial__link {
+  display: block;
+}
+.fsocial__img {
+  fill: white;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: block;
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .fsocial__link:hover &,
+  .fsocial__link:focus & {
+    background-color: $activeColor;
+  }
+}
+.fsign__input {
+  min-width: 270px;
+  margin-right: 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: inherit;
+  color: inherit;
+  padding: 15px 12px;
+}
+.fsign__button {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+%fsign__button {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.fsign__button::after {
+  @extend %fsign__button;
+  background-image: url('../images/flyW.svg');
+  margin-left: 10px;
+  transform: translate(0px, 0px);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fsign__button::before {
+  @extend %fsign__button;
+  background-image: url('../images/flyB.svg');
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-80px, 175%);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fsign__button:hover::after,
+.fsign__button:focus::after {
+  transform: translate(50px, -50px);
+}
+.fsign__button:hover::before,
+.fsign__button:focus::before {
+  transform: translate(-32px, -50%);
+}
+
+/* .fsign__button:hover .fsign__icon,
+.fsign__button:focus .fsign__icon {
+  fill: var(--head-collor);
+} */
+/* .fsign__icon {
+  margin-left: 10px;
+  fill: white;
+  transition:  fill 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+} */
+// .footer__copyright {
+//   margin: 0;
+//   font-size: 12px;
+//   line-height: 2;
+//   text-align: center;
+//   color: var(--white-color);
+//   border-top: 1px solid rgba(255, 255, 255, 0.1);
+// }
+@media screen and (max-width: 768px) {
+  .footer {
+    min-width: 768px;
+  }
+  .footer__main {
+    padding: 60px 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .faddress {
+    text-align: center;
+  }
+  .fsocial {
+    text-align: center;
+  }
+  .fsign {
+    margin-top: 60px;
+    // margin-right: auto;
+    // margin-left: auto;
+    text-align: center;
+  }
+  .fsign__input {
+    min-width: 450px;
+    display: block;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer {
+    min-width: 480px;
+  }
+  .footer__main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fsocial {
+    margin-top: 60px;
+  }
+}

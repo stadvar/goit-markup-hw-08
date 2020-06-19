@@ -1,0 +1,93 @@
+input:active,
+input:focus,
+button:active,
+button:focus,
+a:active,
+a:focus,
+textarea:active,
+textarea:focus {
+  outline: none;
+}
+body {
+  background-color: #ffffff;
+  color: $mainColor;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.03em;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.section {
+  padding: 95px 0;
+  min-width: 1200px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.button {
+  background-color: $activeColor;
+  color: $whiteColor;
+  padding: 10px 32px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  display: inline-block;
+  min-width: 200px;
+  text-align: center;
+  /* outline: 1px solid goldenrod; */
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button:hover,
+.button:focus {
+  background-color: $teamBgColor;
+  color: $headColor;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.hidden {
+  display: none;
+}
+
+//
+@media screen and (max-width: 768px) {
+  .container {
+    width: 768px;
+  }
+  .section {
+    min-width: 768px;
+    padding: 60px 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container {
+    width: 480px;
+  }
+  .section {
+    min-width: 480px;
+  }
+}
