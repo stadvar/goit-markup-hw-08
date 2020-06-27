@@ -11,39 +11,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.6.0/modern-normalize.min.css" />
     <link rel="stylesheet" href="./css/main.min.css" />
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/portfolio.js"></script>
   </head>
   <body>
     <!--Шапка сайта-->
     <header class="header">
       <div class="header__content container">
-        <a href="./index.html" class="logo"><span class="logo__web">Web</span> Studio</a>
-        <nav class="header__nav">
-          <ul class="site-nav list">
-            <li class="site-nav__item"><a class="site-nav__link" href="./index.html">Студия</a></li>
-            <li class="site-nav__item"><a class="site-nav__link current" href="">Портфолио</a></li>
-            <li class="site-nav__item"><a class="site-nav__link" href="">Контакты</a></li>
+        <a href="./index.html" class="logo"><span class="logo__web">Web&nbsp;</span>Studio</a>
+        <div class="header__menu" id="header__menu">
+          <nav class="header__nav">
+            <ul class="site-nav list">
+              <li class="site-nav__item"><a class="site-nav__link" href="./index.html">Студия</a></li>
+              <li class="site-nav__item"><a class="site-nav__link current" href="./portfolio.html">Портфолио</a></li>
+              <li class="site-nav__item"><a class="site-nav__link" href="">Контакты</a></li>
+            </ul>
+          </nav>
+          <ul class="contact-list list">
+            <li class="contact-list__item">
+              <!-- <img class="contact-list__icon" src="./images/mail.svg" alt="mail logo" /> -->
+              <a class="contact-list__link" href="mailto:info@devstudio.com">
+                <svg class="contact-list__icon" width="16" height="11">
+                  <use href="./images/sprite.svg#mail"></use>
+                </svg>
+                info@devstudio.com
+              </a>
+            </li>
+            <li class="contact-list__item">
+              <!-- <img class="contact-list__icon" src="./images/phone.svg" alt="phone logo" /> -->
+              <a class="contact-list__link" href="tel:+380961111111">
+                <svg class="contact-list__icon" width="10" height="15">
+                  <use href="./images/sprite.svg#phone"></use>
+                </svg>
+                +38 096 111 11 11
+              </a>
+            </li>
           </ul>
-        </nav>
-        <ul class="contact-list list">
-          <li class="contact-list__item">
-            <!-- <img class="contact-list__icon" src="./images/mail.svg" alt="mail logo" /> -->
-            <a class="contact-list__link" href="mailto:info@devstudio.com">
-              <svg class="contact-list__icon" width="16" height="11">
-                <use href="./images/sprite.svg#mail"></use>
-              </svg>
-              info@devstudio.com
-            </a>
-          </li>
-          <li class="contact-list__item">
-            <!-- <img class="contact-list__icon" src="./images/phone.svg" alt="phone logo" /> -->
-            <a class="contact-list__link" href="tel:+380961111111">
-              <svg class="contact-list__icon" width="10" height="15">
-                <use href="./images/sprite.svg#phone"></use>
-              </svg>
-              +38 096 111 11 11
-            </a>
-          </li>
-        </ul>
+        </div>
+        <button class="burger" aria-expanded="false" aria-controls="header__menu">
+          <svg class="burger__img" width="40" height="40" aria-label="Переключатель мобильного меню">
+            <use class="icon-menu" href="./images/sprite.svg#burger"></use>
+            <use class="icon-cross" href="./images/sprite.svg#cross"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main class="portfolio__main">
@@ -65,7 +74,33 @@
             <li data-c="web" class="pcards__item">
               <a class="pcards__link" href="">
                 <div class="pcards__about">
-                  <img class="pcards__img" src="./images/portfolio/technokriyak.jpg" alt="Технокряк" width="370" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/technokriyak-370.webp 370w,
+                        ./images/portfolio/technokriyak-450.webp 450w,
+                        ./images/portfolio/technokriyak-740.webp 740w,
+                        ./images/portfolio/technokriyak-900.webp 900w,
+
+                      "
+                      sizes="(min-width: 768px) 370px,  450px"
+                      type="image/webp"
+                    />
+                    <img
+                      class="pcards__img"
+                      srcset="
+                        ./images/portfolio/technokriyak-370.jpg 370w,
+                        ./images/portfolio/technokriyak-450.jpg 450w,
+                        ./images/portfolio/technokriyak-740.jpg 740w,
+                        ./images/portfolio/technokriyak-900.jpg 900w,
+
+                      "
+                      src="./images/portfolio/technokriyak-450.jpg"
+                      sizes="(min-width: 768px) 370px,  450px"
+                      alt="Технокряк"
+                    />
+                  </picture>
+                  <!-- <img class="pcards__img" src="./images/portfolio/technokriyak.jpg" alt="Технокряк" width="370" /> -->
                   <div class="pcards__overlay">
                     <p class="pcards__text">
                       Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для
@@ -84,7 +119,33 @@
             <li data-c="des" class="pcards__item">
               <a class="pcards__link" href="">
                 <div class="pcards__about">
-                  <img class="pcards__img" src="./images/portfolio/neworlean.jpg" alt="New Orlean vs Golden Stars" width="370" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/neworlean-370.webp 370w,
+                        ./images/portfolio/neworlean-450.webp 450w,
+                        ./images/portfolio/neworlean-740.webp 740w,
+                        ./images/portfolio/neworlean-900.webp 900w,
+
+                      "
+                      sizes="(min-width: 768px) 370px,  450px"
+                      type="image/webp"
+                    />
+                    <img
+                      class="pcards__img"
+                      srcset="
+                        ./images/portfolio/neworlean-370.jpg 370w,
+                        ./images/portfolio/neworlean-450.jpg 450w,
+                        ./images/portfolio/neworlean-740.jpg 740w,
+                        ./images/portfolio/neworlean-900.jpg 900w,
+
+                      "
+                      src="./images/portfolio/neworlean-450.jpg"
+                      sizes="(min-width: 768px) 370px,  450px"
+                      alt="New Orlean vs Golden Star"
+                    />
+                  </picture>
+                  <!-- <img class="pcards__img" src="./images/portfolio/neworlean.jpg" alt="New Orlean vs Golden Stars" width="370" /> -->
                   <div class="pcards__overlay">
                     <p class="pcards__text">
                       Технокряк это современная площадка распространения коронавируса.
@@ -100,7 +161,33 @@
             <li data-c="app" class="pcards__item">
               <a class="pcards__link" href="">
                 <div class="pcards__about">
-                  <img class="pcards__img" src="./images/portfolio/seafood.jpg" alt="Seafood" width="370" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/seafood-370.webp 370w,
+                        ./images/portfolio/seafood-450.webp 450w,
+                        ./images/portfolio/seafood-740.webp 740w,
+                        ./images/portfolio/seafood-900.webp 900w,
+
+                      "
+                      sizes="(min-width: 768px) 370px,  450px"
+                      type="image/webp"
+                    />
+                    <img
+                      class="pcards__img"
+                      srcset="
+                        ./images/portfolio/seafood-370.jpg 370w,
+                        ./images/portfolio/seafood-450.jpg 450w,
+                        ./images/portfolio/seafood-740.jpg 740w,
+                        ./images/portfolio/seafood-900.jpg 900w,
+
+                      "
+                      src="./images/portfolio/seafood-450.jpg"
+                      sizes="(min-width: 768px) 370px,  450px"
+                      alt="Seafood"
+                    />
+                  </picture>
+                  <!-- <img class="pcards__img" src="./images/portfolio/seafood.jpg" alt="Seafood" width="370" /> -->
                   <div class="pcards__overlay">
                     <p class="pcards__text">
                       Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для
@@ -117,7 +204,33 @@
             <li data-c="mar" class="pcards__item">
               <a class="pcards__link" href="">
                 <div class="pcards__about">
-                  <img class="pcards__img" src="./images/portfolio/prime.jpg" alt="Prime" width="370" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/prime-370.webp 370w,
+                        ./images/portfolio/prime-450.webp 450w,
+                        ./images/portfolio/prime-740.webp 740w,
+                        ./images/portfolio/prime-900.webp 900w,
+
+                      "
+                      sizes="(min-width: 768px) 370px,  450px"
+                      type="image/webp"
+                    />
+                    <img
+                      class="pcards__img"
+                      srcset="
+                        ./images/portfolio/prime-370.jpg 370w,
+                        ./images/portfolio/prime-450.jpg 450w,
+                        ./images/portfolio/prime-740.jpg 740w,
+                        ./images/portfolio/prime-900.jpg 900w,
+
+                      "
+                      src="./images/portfolio/prime-450.jpg"
+                      sizes="(min-width: 768px) 370px,  450px"
+                      alt="Prime"
+                    />
+                  </picture>
+                  <!-- <img class="pcards__img" src="./images/portfolio/prime.jpg" alt="Prime" width="370" /> -->
                   <div class="pcards__overlay">
                     <p class="pcards__text">
                       Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для
@@ -142,7 +255,33 @@
             <li data-c="app" class="pcards__item">
               <a class="pcards__link" href="">
                 <div class="pcards__about">
-                  <img class="pcards__img" src="./images/portfolio/boxes.jpg" alt="Boxes" width="370" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/boxes-370.webp 370w,
+                        ./images/portfolio/boxes-450.webp 450w,
+                        ./images/portfolio/boxes-740.webp 740w,
+                        ./images/portfolio/boxes-900.webp 900w,
+
+                      "
+                      sizes="(min-width: 768px) 370px,  450px"
+                      type="image/webp"
+                    />
+                    <img
+                      class="pcards__img"
+                      srcset="
+                        ./images/portfolio/boxes-370.jpg 370w,
+                        ./images/portfolio/boxes-450.jpg 450w,
+                        ./images/portfolio/boxes-740.jpg 740w,
+                        ./images/portfolio/boxes-900.jpg 900w,
+
+                      "
+                      src="./images/portfolio/boxes-450.jpg"
+                      sizes="(min-width: 768px) 370px,  450px"
+                      alt="Boxes"
+                    />
+                  </picture>
+                  <!-- <img class="pcards__img" src="./images/portfolio/boxes.jpg" alt="Boxes" width="370" /> -->
                   <div class="pcards__overlay">
                     <p class="pcards__text">
                       Технокряк это площадка.
@@ -158,12 +297,38 @@
             <li data-c="web" class="pcards__item">
               <a class="pcards__link" href="">
                 <div class="pcards__about">
-                  <img
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/inspiration-370.webp 370w,
+                        ./images/portfolio/inspiration-450.webp 450w,
+                        ./images/portfolio/inspiration-740.webp 740w,
+                        ./images/portfolio/inspiration-900.webp 900w,
+
+                      "
+                      sizes="(min-width: 768px) 370px,  450px"
+                      type="image/webp"
+                    />
+                    <img
+                      class="pcards__img"
+                      srcset="
+                        ./images/portfolio/inspiration-370.jpg 370w,
+                        ./images/portfolio/inspiration-450.jpg 450w,
+                        ./images/portfolio/inspiration-740.jpg 740w,
+                        ./images/portfolio/inspiration-900.jpg 900w,
+
+                      "
+                      src="./images/portfolio/inspiration-450.jpg"
+                      sizes="(min-width: 768px) 370px,  450px"
+                      alt="Inspiration has no Borders"
+                    />
+                  </picture>
+                  <!-- <img
                     class="pcards__img"
                     src="./images/portfolio/inspiration.jpg"
                     alt="Inspiration has no Borders"
                     width="370"
-                  />
+                  /> -->
                   <div class="pcards__overlay">
                     <p class="pcards__text">
                       Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для
@@ -183,7 +348,33 @@
             <li data-c="des" class="pcards__item">
               <a class="pcards__link" href="">
                 <div class="pcards__about">
-                  <img class="pcards__img" src="./images/portfolio/limitedition.jpg" alt="Limited Edition" width="370" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/limitedition-370.webp 370w,
+                        ./images/portfolio/limitedition-450.webp 450w,
+                        ./images/portfolio/limitedition-740.webp 740w,
+                        ./images/portfolio/limitedition-900.webp 900w,
+
+                      "
+                      sizes="(min-width: 768px) 370px,  450px"
+                      type="image/webp"
+                    />
+                    <img
+                      class="pcards__img"
+                      srcset="
+                        ./images/portfolio/limitedition-370.jpg 370w,
+                        ./images/portfolio/limitedition-450.jpg 450w,
+                        ./images/portfolio/limitedition-740.jpg 740w,
+                        ./images/portfolio/limitedition-900.jpg 900w,
+
+                      "
+                      src="./images/portfolio/limitedition-450.jpg"
+                      sizes="(min-width: 768px) 370px,  450px"
+                      alt="Limited Edition"
+                    />
+                  </picture>
+                  <!-- <img class="pcards__img" src="./images/portfolio/limitedition.jpg" alt="Limited Edition" width="370" /> -->
                   <div class="pcards__overlay">
                     <p class="pcards__text">
                       Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для
@@ -200,7 +391,33 @@
             <li data-c="mar" class="pcards__item">
               <a class="pcards__link" href="">
                 <div class="pcards__about">
-                  <img class="pcards__img" src="./images/portfolio/lab.jpg" alt="LAB" width="370" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/lab-370.webp 370w,
+                        ./images/portfolio/lab-450.webp 450w,
+                        ./images/portfolio/lab-740.webp 740w,
+                        ./images/portfolio/lab-900.webp 900w,
+
+                      "
+                      sizes="(min-width: 768px) 370px,  450px"
+                      type="image/webp"
+                    />
+                    <img
+                      class="pcards__img"
+                      srcset="
+                        ./images/portfolio/lab-370.jpg 370w,
+                        ./images/portfolio/lab-450.jpg 450w,
+                        ./images/portfolio/lab-740.jpg 740w,
+                        ./images/portfolio/lab-900.jpg 900w,
+
+                      "
+                      src="./images/portfolio/lab-450.jpg"
+                      sizes="(min-width: 768px) 370px,  450px"
+                      alt="LAB"
+                    />
+                  </picture>
+                  <!-- <img class="pcards__img" src="./images/portfolio/lab.jpg" alt="LAB" width="370" /> -->
                   <div class="pcards__overlay">
                     <p class="pcards__text">
                       Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для
@@ -219,7 +436,33 @@
             <li data-c="app" class="pcards__item">
               <a class="pcards__link" href="">
                 <div class="pcards__about">
-                  <img class="pcards__img" src="./images/portfolio/growbusiness.jpg" alt="Growing Business" width="370" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/growbusiness-370.webp 370w,
+                        ./images/portfolio/growbusiness-450.webp 450w,
+                        ./images/portfolio/growbusiness-740.webp 740w,
+                        ./images/portfolio/growbusiness-900.webp 900w,
+
+                      "
+                      sizes="(min-width: 768px) 370px,  450px"
+                      type="image/webp"
+                    />
+                    <img
+                      class="pcards__img"
+                      srcset="
+                        ./images/portfolio/growbusiness-370.jpg 370w,
+                        ./images/portfolio/growbusiness-450.jpg 450w,
+                        ./images/portfolio/growbusiness-740.jpg 740w,
+                        ./images/portfolio/growbusiness-900.jpg 900w,
+
+                      "
+                      src="./images/portfolio/growbusiness-450.jpg"
+                      sizes="(min-width: 768px) 370px,  450px"
+                      alt="Growing Business"
+                    />
+                  </picture>
+                  <!-- <img class="pcards__img" src="./images/portfolio/growbusiness.jpg" alt="Growing Business" width="370" /> -->
                   <div class="pcards__overlay">
                     <p class="pcards__text">
                       Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для
@@ -287,9 +530,9 @@
             <input class="fsign__input" type="email" name="elmail" id="elmail" value="" placeholder="input your email" />
             <button type="submit" class="fsign__button button">
               Подписаться
-              <!-- <svg class="fsign__icon" width="24" height="24">
+              <svg class="fsign__icon" width="24" height="24">
                 <use href="./images/sprite.svg#plane"></use>
-              </svg> -->
+              </svg>
             </button>
           </form>
         </div>

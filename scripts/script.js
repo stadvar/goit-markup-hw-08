@@ -1,49 +1,49 @@
 //'use strict';
 window.onload = () => {
-  let bttns = document.querySelectorAll('.pnav__buton');
-  let cards = document.querySelectorAll('.pcards__item');
-
-  for (let i = 0; i < bttns.length; i++) {
-    let Bdata = bttns[i].dataset.b;
-
-    bttns[i].onclick = () => {
-      for (let i = 0; i < cards.length; i++) {
-        let Cdata = cards[i].dataset.c;
-
-        if (Cdata == Bdata || Bdata == 'all') {
-          //   //элемент.classList.toggle('класс');
-          let aval = cards[i].classList.contains('hidden');
-
-          if (aval) {
-            cards[i].classList.remove('hidden');
-          }
-        } else {
-          cards[i].classList.add('hidden');
-        }
-        // cards[i].classList.toggle('hidden');}
-      }
-    };
-  }
+  // let bttns = document.querySelectorAll('.pnav__buton');
+  // let cards = document.querySelectorAll('.pcards__item');
+  // for (let i = 0; i < bttns.length; i++) {
+  //   let Bdata = bttns[i].dataset.b;
+  //   bttns[i].onclick = () => {
+  //     for (let i = 0; i < cards.length; i++) {
+  //       let Cdata = cards[i].dataset.c;
+  //       if (Cdata == Bdata || Bdata == 'all') {
+  //         //   //элемент.classList.toggle('класс');
+  //         let aval = cards[i].classList.contains('hidden');
+  //         if (aval) {
+  //           cards[i].classList.remove('hidden');
+  //         }
+  //       } else {
+  //         cards[i].classList.add('hidden');
+  //       }
+  //       // cards[i].classList.toggle('hidden');}
+  //     }
+  //   };
+  // }
   //---------------
-  document.querySelector('.hero__button').onclick = () => {
-    document.querySelector('.form__backdrop').classList.remove('is-hidden');
-  };
-  document.querySelector('.modal__button').onclick = () => {
-    document.querySelector('.form__backdrop').classList.add('is-hidden');
-  };
+  // document.querySelector('.hero__button').onclick = () => {
+  //   document.querySelector('.form__backdrop').classList.remove('is-hidden');
+  // };
+  // document.querySelector('.modal__button').onclick = () => {
+  //   document.querySelector('.form__backdrop').classList.add('is-hidden');
+  // };
   //--------------------
-  const policy = document.getElementById('checkbox');
-  policy.onchange = () => {
-    if (policy.checked) {
-      document.getElementById('send').removeAttribute('disabled');
-    } else {
-      document.getElementById('send').setAttribute('disabled', 'true');
-    }
-  };
+  // const policy = document.getElementById('checkbox');
+  // policy.onchange = () => {
+  //   if (policy.checked) {
+  //     document.getElementById('send').removeAttribute('disabled');
+  //   } else {
+  //     document.getElementById('send').setAttribute('disabled', 'true');
+  //   }
+  // };
+  //--------------------------
+  // const burger = document.querySelector('.burger');
+  // burger.onclick = () => {
+  //   document.querySelector('.header__menu').classList.toggle('hidden');
+  // };
   //---------------------
   // let Tags = document.querySelectorAll('.pcards__about');
   // let Txt = document.querySelectorAll('.pcards__text');
-
   // for (let i = 0; i < Txt.length; i++) {
   //   var Div = window.getComputedStyle(Tags[i]);
   //   let Dh = Math.round(parseFloat(Div.height));
@@ -64,7 +64,6 @@ window.onload = () => {
   //----------------------------------------------
   // Напишите функцию camelize(str), которая преобразует строки вида
   // «my-short-string» в camelCase
-
   // function camelize(str) {
   //   let arr = str.split('');
   //   arr.map((El, i) => {
@@ -97,11 +96,9 @@ window.onload = () => {
   // }
   //-----------------------
   // let arr = [5, 2, 1, -10, 8];
-
   // arr.sort(function (a, b) {
   //   return b - a;
   // });
-
   // alert(arr); // 8, 5, 2, 1, -10
   //------------------------------
   // let arr = ['HTML', 'JavaScript', 'CSS'];
@@ -147,17 +144,13 @@ window.onload = () => {
   // let vasya = { name: 'Вася', age: 25 };
   // let petya = { name: 'Петя', age: 30 };
   // let masha = { name: 'Маша', age: 28 };
-
   // let users = [vasya, petya, masha];
-
   // let names = users.map(item => item.name);
-
   // alert(names); // Вася, Петя, Маша
   //------------------------------------
   //   let vasya = { name: 'Вася', surname: 'Пупкин', id: 1 };
   //   let petya = { name: 'Петя', surname: 'Иванов', id: 2 };
   //   let masha = { name: 'Маша', surname: 'Петрова', id: 3 };
-
   //   let users = [vasya, petya, masha];
   //   /*
   // usersMapped = [
@@ -176,10 +169,8 @@ window.onload = () => {
   // let vasya = { name: 'Вася', age: 25 };
   // let petya = { name: 'Петя', age: 30 };
   // let masha = { name: 'Маша', age: 28 };
-
   // let arr = [vasya, petya, masha];
   // console.log(arr);
-
   // function sortByAge(arr) {
   //   return arr.sort((a, b) => a.age - b.age);
   // }
@@ -192,9 +183,7 @@ window.onload = () => {
   // let vasya = { name: 'Вася', age: 25 };
   // let petya = { name: 'Петя', age: 30 };
   // let masha = { name: 'Маша', age: 29 };
-
   // let arr = [vasya, petya, masha];
-
   // function getAverageAge(arr) {
   //   let sum = 0;
   //   arr.forEach(El => (sum += El.age));
@@ -202,9 +191,7 @@ window.onload = () => {
   // }
   //alert(getAverageAge(arr)); // (25 + 30 + 29) / 3 = 28
   //---------------------------------------
-
   // let arr = ['кришна', 'кришна', 'харе', 'харе', 'харе', 'харе', 'кришна', 'кришна', ':-O'];
-
   // function unique(arr) {
   //   let itog = [];
   //   arr.forEach(El => {
@@ -216,15 +203,9 @@ window.onload = () => {
   //   console.log(itog);
   // }
   //alert(unique(strings)); // кришна, харе, :-O
-
   // function unique(arr) {
   //   let B = new Set(arr);
   //   return B;
   // }
   //-------------------------------------
-  let arr = [1, 2, 3];
-  function shuffle(arr) {
-    arr.push(arr.shift());
-    return arr;
-  }
 }; //window.onload;

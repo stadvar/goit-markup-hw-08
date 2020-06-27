@@ -11,39 +11,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.6.0/modern-normalize.min.css" />
     <link rel="stylesheet" href="./css/main.min.css" />
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/index.js"></script>
   </head>
   <body>
     <!--Шапка сайта-->
     <header class="header">
       <div class="header__content container">
-        <a href="./index.html" class="logo"><span class="logo__web">Web</span> Studio</a>
-        <nav class="header__nav">
-          <ul class="site-nav list">
-            <li class="site-nav__item"><a class="site-nav__link current" href="">Студия</a></li>
-            <li class="site-nav__item"><a class="site-nav__link" href="./portfolio.html">Портфолио</a></li>
-            <li class="site-nav__item"><a class="site-nav__link" href="">Контакты</a></li>
+        <a href="./index.html" class="logo"><span class="logo__web">Web&nbsp;</span>Studio</a>
+        <div class="header__menu" id="header__menu">
+          <nav class="header__nav">
+            <ul class="site-nav list">
+              <li class="site-nav__item"><a class="site-nav__link current" href="">Студия</a></li>
+              <li class="site-nav__item"><a class="site-nav__link" href="./portfolio.html">Портфолио</a></li>
+              <li class="site-nav__item"><a class="site-nav__link" href="">Контакты</a></li>
+            </ul>
+          </nav>
+          <ul class="contact-list list">
+            <li class="contact-list__item">
+              <!-- <img class="contact-list__icon" src="./images/mail.svg" alt="mail logo" /> -->
+              <a class="contact-list__link" href="mailto:info@devstudio.com">
+                <svg class="contact-list__icon" width="16" height="11">
+                  <use href="./images/sprite.svg#mail"></use>
+                </svg>
+                info@devstudio.com
+              </a>
+            </li>
+            <li class="contact-list__item">
+              <!-- <img class="contact-list__icon" src="./images/phone.svg" alt="phone logo" /> -->
+              <a class="contact-list__link" href="tel:+380961111111">
+                <svg class="contact-list__icon" width="10" height="15">
+                  <use href="./images/sprite.svg#phone"></use>
+                </svg>
+                +38 096 111 11 11
+              </a>
+            </li>
           </ul>
-        </nav>
-        <ul class="contact-list list">
-          <li class="contact-list__item">
-            <!-- <img class="contact-list__icon" src="./images/mail.svg" alt="mail logo" /> -->
-            <a class="contact-list__link" href="mailto:info@devstudio.com">
-              <svg class="contact-list__icon" width="16" height="11">
-                <use href="./images/sprite.svg#mail"></use>
-              </svg>
-              info@devstudio.com
-            </a>
-          </li>
-          <li class="contact-list__item">
-            <!-- <img class="contact-list__icon" src="./images/phone.svg" alt="phone logo" /> -->
-            <a class="contact-list__link" href="tel:+380961111111">
-              <svg class="contact-list__icon" width="10" height="15">
-                <use href="./images/sprite.svg#phone"></use>
-              </svg>
-              +38 096 111 11 11
-            </a>
-          </li>
-        </ul>
+        </div>
+        <button class="burger" aria-expanded="false" aria-controls="header__menu">
+          <svg class="burger__img" width="40" height="40" aria-label="Переключатель мобильного меню">
+            <use class="icon-menu" href="./images/sprite.svg#burger"></use>
+            <use class="icon-cross" href="./images/sprite.svg#cross"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
@@ -95,7 +104,6 @@
           </ul>
         </div>
       </section>
-      <!-- <div class="container bottborder"></div> -->
       <!--Чем мы занимаемся-->
       <section class="works section">
         <div class="works__content container">
@@ -103,19 +111,37 @@
           <ul class="works__list list">
             <li class="works__item">
               <a class="works__link" href="">
-                <img class="works__img" src="./images/desktopapps.jpg" alt="Desktop Apps" width="370" />
+                <img
+                  class="works__img"
+                  srcset="./images/works/desktopapps.jpg 1x, ./images/works/desktopapps@2x.jpg 2x"
+                  src="./images/works/desktopapps.jpg"
+                  alt="Desktop Apps"
+                  width="370"
+                />
                 <h3 class="works__title">Десктопные приложения</h3>
               </a>
             </li>
             <li class="works__item">
-              <a class="works__link" href=""
-                ><img class="works__img" src="./images/mobileapps.jpg" alt="Mobile Apps" width="370" />
+              <a class="works__link" href="">
+                <img
+                  class="works__img"
+                  srcset="./images/works/mobileapps.jpg 1x, ./images/works/mobileapps@2x.jpg 2x"
+                  src="./images/works/mobileapps.jpg"
+                  alt="Mobile Apps"
+                  width="370"
+                />
                 <h3 class="works__title">Мобильные приложения</h3>
               </a>
             </li>
             <li class="works__item">
               <a class="works__link" href="">
-                <img class="works__img" src="./images/designsolution.jpg" alt="Design Solutions" width="370" />
+                <img
+                  class="works__img"
+                  srcset="./images/works/designsolution.jpg 1x, ./images/works/designsolution@2x.jpg 2x"
+                  src="./images/works/designsolution.jpg"
+                  alt="Design Solutions"
+                  width="370"
+                />
                 <h3 class="works__title">Дизайнерские решения</h3>
               </a>
             </li>
@@ -128,7 +154,38 @@
           <h2 class="section-caption">Наша Команда</h2>
           <ul class="team__list list">
             <li class="team__item">
-              <img class="team__img" src="./images/crewmate1.jpg" alt="Сотрудник 1" width="280" />
+              <picture>
+                <source
+                  srcset="./images/teammates/mate1-450.webp 1x, ./images/teammates/mate1-900.webp 2x"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/teammates/mate1-270.webp 1x, ./images/teammates/mate1-540.webp 2x"
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/teammates/mate1-354.webp 1x, ./images/teammates/mate1-708.webp 2x"
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+
+                <img
+                  class="team__img"
+                  srcset="
+                    ./images/teammates/mate1-270.jpg 270w,
+                    ./images/teammates/mate1-354.jpg 354w,
+                    ./images/teammates/mate1-450.jpg 450w,
+                    ./images/teammates/mate1-540.jpg 540w,
+                    ./images/teammates/mate1-708.jpg 708w,
+                    ./images/teammates/mate1-900.jpg 900w
+                  "
+                  src="./images/teammates/mate1-450.jpg"
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px,  450px"
+                  alt="Сотрудник 1"
+                />
+              </picture>
               <h3 class="team__title">John Smith</h3>
               <p class="team__position">Product Designer</p>
               <ul class="tsocial list">
@@ -167,7 +224,38 @@
               </ul>
             </li>
             <li class="team__item">
-              <img class="team__img" src="./images/crewmate2.jpg" alt="Сотрудник 2" width="270" />
+              <picture>
+                <source
+                  srcset="./images/teammates/mate2-450.webp 1x, ./images/teammates/mate2-900.webp 2x"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/teammates/mate2-270.webp 1x, ./images/teammates/mate2-540.webp 2x"
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/teammates/mate2-354.webp 1x, ./images/teammates/mate2-708.webp 2x"
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+
+                <img
+                  class="team__img"
+                  srcset="
+                    ./images/teammates/mate2-270.jpg 270w,
+                    ./images/teammates/mate2-354.jpg 354w,
+                    ./images/teammates/mate2-450.jpg 450w,
+                    ./images/teammates/mate2-540.jpg 540w,
+                    ./images/teammates/mate2-708.jpg 708w,
+                    ./images/teammates/mate2-900.jpg 900w
+                  "
+                  src="./images/teammates/mate2-450.jpg"
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px,  450px"
+                  alt="Сотрудник 2"
+                />
+              </picture>
               <h3 class="team__title">Marta Stewart</h3>
               <p class="team__position">Frontend Developer</p>
               <ul class="tsocial list">
@@ -206,7 +294,38 @@
               </ul>
             </li>
             <li class="team__item">
-              <img class="team__img" src="./images/crewmate3.jpg" alt="Сотрудник 3" width="270" />
+              <picture>
+                <source
+                  srcset="./images/teammates/mate3-450.webp 1x, ./images/teammates/mate3-900.webp 2x"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/teammates/mate3-270.webp 1x, ./images/teammates/mate3-540.webp 2x"
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/teammates/mate3-354.webp 1x, ./images/teammates/mate3-708.webp 2x"
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+
+                <img
+                  class="team__img"
+                  srcset="
+                    ./images/teammates/mate3-270.jpg 270w,
+                    ./images/teammates/mate3-354.jpg 354w,
+                    ./images/teammates/mate3-450.jpg 450w,
+                    ./images/teammates/mate3-540.jpg 540w,
+                    ./images/teammates/mate3-708.jpg 708w,
+                    ./images/teammates/mate3-900.jpg 900w
+                  "
+                  src="./images/teammates/mate2-450.jpg"
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px,  450px"
+                  alt="Сотрудник 3"
+                />
+              </picture>
               <h3 class="team__title">Robert Jakis</h3>
               <p class="team__position">Marketing</p>
               <ul class="tsocial list">
@@ -245,7 +364,34 @@
               </ul>
             </li>
             <li class="team__item">
-              <img class="team__img" src="./images/crewmate4.jpg" alt="Сотрудник 4" width="270" />
+              <picture>
+                <source
+                  srcset="
+                    ./images/teammates/mate4-270.webp 270w,
+                    ./images/teammates/mate4-354.webp 354w,
+                    ./images/teammates/mate4-450.webp 450w,
+                    ./images/teammates/mate4-540.webp 540w,
+                    ./images/teammates/mate4-708.webp 708w,
+                    ./images/teammates/mate4-900.webp 900w
+                  "
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px,  450px"
+                  type="image/webp"
+                />
+                <img
+                  class="team__img"
+                  srcset="
+                    ./images/teammates/mate4-270.jpg 270w,
+                    ./images/teammates/mate4-354.jpg 354w,
+                    ./images/teammates/mate4-450.jpg 450w,
+                    ./images/teammates/mate4-540.jpg 540w,
+                    ./images/teammates/mate4-708.jpg 708w,
+                    ./images/teammates/mate4-900.jpg 900w
+                  "
+                  src="./images/teammates/mate4-450.jpg"
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px,  450px"
+                  alt="Сотрудник 4"
+                />
+              </picture>
               <h3 class="team__title">Martin Doe</h3>
               <p class="team__position">UI Designer</p>
               <ul class="tsocial list">
@@ -444,9 +590,9 @@
             <input class="fsign__input" type="email" name="elmail" id="elmail" value="" placeholder="input your email" />
             <button type="submit" class="fsign__button button">
               Подписаться
-              <!-- <svg class="fsign__icon" width="24" height="24">
+              <svg class="fsign__icon" width="24" height="24">
                 <use href="./images/sprite.svg#plane"></use>
-              </svg> -->
+              </svg>
             </button>
           </form>
         </div>

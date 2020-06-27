@@ -1,0 +1,27 @@
+<picture>
+  <source
+    srcset="./images/john/john-450.webp 450w, ./images/john/john-900.webp 900w"
+    media="(max-width: 767px)"
+    type="image/webp" />
+  <source
+    srcset="./images/john/john-270.webp 270w, ./images/john/john-540.webp 540w"
+    media="(min-width: 1200px)"
+    type="image/webp" />
+  <source
+    srcset="./images/john/john-354.webp 354w, ./images/john/john-708.webp 708w"
+    media="(min-width: 768px)"
+    type="image/webp" />
+  <img
+    class="section-team__img"
+    srcset="
+      ./images/john/john-270.jpg 270w,
+      ./images/john/john-354.jpg 354w,
+      ./images/john/john-450.jpg 450w,
+      ./images/john/john-540.jpg 540w,
+      ./images/john/john-708.jpg 708w,
+      ./images/john/john-900.jpg 900w
+    "
+    src="./images/martin-doe.jpg"
+    alt="Фотография Иван Николаев"
+    sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, 450px"
+/></picture>
