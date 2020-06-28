@@ -366,17 +366,21 @@
             <li class="team__item">
               <picture>
                 <source
-                  srcset="
-                    ./images/teammates/mate4-270.webp 270w,
-                    ./images/teammates/mate4-354.webp 354w,
-                    ./images/teammates/mate4-450.webp 450w,
-                    ./images/teammates/mate4-540.webp 540w,
-                    ./images/teammates/mate4-708.webp 708w,
-                    ./images/teammates/mate4-900.webp 900w
-                  "
-                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px,  450px"
+                  srcset="./images/teammates/mate4-450.webp 1x, ./images/teammates/mate4-900.webp 2x"
+                  media="(max-width: 767px)"
                   type="image/webp"
                 />
+                <source
+                  srcset="./images/teammates/mate4-270.webp 1x, ./images/teammates/mate4-540.webp 2x"
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/teammates/mate4-354.webp 1x, ./images/teammates/mate4-708.webp 2x"
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+
                 <img
                   class="team__img"
                   srcset="
